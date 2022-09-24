@@ -18,4 +18,4 @@ const app=initializeApp(firebaseConfig)
 const storage= getStorage(app)
 const firestore=getFirestore(app)
 
-export default {storage,firestore}
+export  {storage,firestore}
