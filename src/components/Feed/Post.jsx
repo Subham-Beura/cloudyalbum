@@ -15,15 +15,16 @@ export function Post({ post }) {
             flexDirection: "column",
             justifyContent: "space-between"
         }}>
-            <Box height={imgLoaded && "fit-content"} display={imgLoaded ? "block" : "none"} width="100%" >
+            <Box height={imgLoaded &&{ xs:"45vh",sm:"65vh"}} display={imgLoaded ? "block" : "none"} width="100%" >
                 <CardMedia
                     component="img"
+                    height={"100%"}
                     image={post.data.url}
                     onLoad={() => { setImgLoaded(true) }}
                     alt="Paella dish" />
 
             </Box>
-            <Box height={!imgLoaded && "50vh"} display={imgLoaded ? "none" : "flex"} justifyContent="center" alignItems="center"  >
+            <Box height={!imgLoaded && {xs:"45vh",sm:"65vh"}} display={imgLoaded ? "none" : "flex"} justifyContent="center" alignItems="center"  >
                 <CircularProgress disableShrink />
             </Box>
 
