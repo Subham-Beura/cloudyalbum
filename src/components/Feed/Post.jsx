@@ -1,10 +1,10 @@
 import React from 'react';
-import { Avatar, Card, CardActions, CardHeader, CardMedia, Checkbox, IconButton ,Box} from '@mui/material';
+import { Avatar, Card, CardActions, CardHeader, CardMedia, Checkbox, IconButton, Box, CircularProgress } from '@mui/material';
 import ShareIcon from '@mui/icons-material/Share';
 import { Favorite, FavoriteBorder } from '@mui/icons-material';
-
+import { useState } from 'react';
 export function Post({ post }) {
-    console.log("A")
+    const [imgLoaded, setImgLoaded] = useState(false)
     return (
         <Card sx={{
 
@@ -15,12 +15,18 @@ export function Post({ post }) {
             flexDirection: "column",
             justifyContent: "space-between"
         }}>
-            <Box minHeight={{xs:"20vh",sm:"40%"}} height="fit-content" width="100%">
+            <Box height={imgLoaded && "fit-content"} display={imgLoaded ? "block" : "none"} width="100%" >
                 <CardMedia
                     component="img"
                     image={post.data.url}
+                    onLoad={() => { setImgLoaded(true) }}
                     alt="Paella dish" />
+
             </Box>
+            <Box height={!imgLoaded && "50vh"} display={imgLoaded ? "none" : "flex"} justifyContent="center" alignItems="center"  >
+                <CircularProgress disableShrink />
+            </Box>
+
             <CardHeader
                 avatar={
                     <Avatar
