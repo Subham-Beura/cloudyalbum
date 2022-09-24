@@ -1,5 +1,5 @@
 import React from 'react';
-import { Avatar, Card, CardActions, CardContent, CardHeader, CardMedia, Checkbox, IconButton, Typography } from '@mui/material';
+import { Avatar, Card, CardActions, CardHeader, CardMedia, Checkbox, IconButton } from '@mui/material';
 import ShareIcon from '@mui/icons-material/Share';
 import { Favorite, FavoriteBorder } from '@mui/icons-material';
 
@@ -7,7 +7,8 @@ export function Post() {
     return (
         <Card sx={{
 
-            mx: { xs: 0, sm: 4 },
+            mx: { xs: 0, sm: 2 },
+            height:{sm:"fit-content"},
             my: 4,
             display: "flex",
             flexDirection: "column",
@@ -15,7 +16,7 @@ export function Post() {
         }}>
             <CardMedia
                 component="img"
-                height="5%"
+                sx={{height:{xs:"93%",sm:"80%"}}}
                 image="https://source.unsplash.com/random"
                 alt="Paella dish" />
             <CardHeader

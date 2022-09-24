@@ -1,12 +1,12 @@
 import React from 'react'
-import { ListItemIcon, ListItemText, List, ListItem, ListItemButton,Box } from '@mui/material'
+import { ListItemIcon, ListItemText, List, ListItemButton,Box } from '@mui/material'
 import HomeIcon from '@mui/icons-material/Home';
 import SettingsIcon from '@mui/icons-material/Settings';
 import AccountBoxIcon from '@mui/icons-material/AccountBox';
 export const SideBar = () => {
   return (
     <Box  flex={1} p={3} sx={{ display: { xs: "none", sm: "block" } }} >
-      <Box position={"fixed"}>
+      <Box position={"fixed"}  sx={{ width: '15%'}}>
 
       <List sx={{ width: '100%', maxWidth: 360, bgcolor: 'background.paper' }}>
         <ListItemButton>
