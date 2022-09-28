@@ -1,8 +1,8 @@
 import React from 'react'
 
 import { SideBar } from "./components/SideBar"
-import { Header, Navbar } from "./components/Header/Header"
-import { RightBar } from "./components/RightBar"
+import { Header } from "./components/Header/Header"
+import { RightBar } from "./components/RightBar/RightBar"
 import { Feed } from "./components/Feed/Feed"
 import Box from '@mui/material/Box'
 import Stack from '@mui/material/Stack'

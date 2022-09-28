@@ -1,7 +1,7 @@
 import { CircularProgress } from '@mui/material';
 import Box from '@mui/material/Box'
 import React from 'react'
-import useFetch from '../../firebase/useFetch';
+import useFetch from '../../hooks/useFetch';
 import { Post } from './Post';
 
 
