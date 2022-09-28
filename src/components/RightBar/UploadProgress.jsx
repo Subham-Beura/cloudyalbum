@@ -1,11 +1,14 @@
 import { Box, Button, LinearProgress, Typography } from '@mui/material'
-import React, { useEffect, useState } from 'react'
+import React, { useState } from 'react'
 import useFireStore from '../../hooks/useFirestore'
 import useStorage from '../../hooks/useStorage'
 
-export const UploadProgress = ({ file, setFile, setIsUploading,setPreview }) => {
+export const UploadProgress = ({ file, setFile, setIsUploading, setPreview }) => {
     function reUpload() {
-        setIsUploading(false); setFile(null); setPreview(null)
+        setIsUploading(false)
+        setFile(null)
+        setPreview(null)
+        window.location.reload()
     }
 
     const [uploading, setUploading] = useState(true)

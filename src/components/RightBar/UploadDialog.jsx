@@ -18,7 +18,7 @@ export function UploadDialog(props) {
     console.log(file)
   }
 
-  return (<Dialog open={props.isOpen} onClose={() => props.setIsOpen(false)} aria-labelledby="upload" fullWidth={true}>
+  return (<Dialog open={props.isOpen} onClose={() => {props.setIsOpen(false);}} aria-labelledby="upload" fullWidth={true}>
     <DialogTitle id="upload">Upload Image</DialogTitle>
 
     <ImagePreview preview={preview} setPreview={setPreview} selectImg={selectImg}></ImagePreview>
