@@ -14,7 +14,7 @@ export function DialogButtons({ file, setPreview, setIsOpen, setFile,setIsUpload
           display: "flex",
           justifyContent: "space-between"
         }}>
-        <Button mx={2} variant="contained" onClick={()=>setIsUploading(true)}  >Upload</Button>
+        <Button mx={2} variant="contained" onClick={()=>file&&setIsUploading(true)}  >Upload</Button>
         <Button onClick={() => {setIsOpen(false)}}>Cancel</Button>
       </Box>
 
