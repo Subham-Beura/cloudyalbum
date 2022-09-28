@@ -3,7 +3,7 @@ import Button from '@mui/material/Button';
 import Box from '@mui/material/Box';
 import DialogContent from '@mui/material/DialogContent';
 
-export function ImagePreview({ preview, setPreview }) {
+export function ImagePreview({ preview, setPreview,selectImg }) {
 
   const createPreview = e => setPreview(URL.createObjectURL(e.target.files[0]))
 
@@ -25,7 +25,7 @@ export function ImagePreview({ preview, setPreview }) {
             component="label">
             
             Select Image
-            <input hidden accept="image/*" multiple type="file" onChange={e => createPreview(e)} />
+            <input hidden accept="image/*" multiple type="file" onChange={e =>{ createPreview(e);selectImg(e)}} />
             
           </Button>
         </Box>

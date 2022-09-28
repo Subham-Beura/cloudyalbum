@@ -3,10 +3,10 @@ import Button from '@mui/material/Button';
 import Box from '@mui/material/Box';
 import DialogActions from '@mui/material/DialogActions';
 
-export function DialogButtons(props) {
+export function DialogButtons({ file, setPreview, setIsOpen, setFile,setIsUploading }) {
   return (
     <DialogActions m={4} sx={{ display: "flex", justifyContent: "space-between" }}>
-      <Button variant="outlined" onClick={() => props.setPreview(null)}>Clear</Button>
+      <Button variant="outlined" onClick={() => setPreview(null)}>Clear</Button>
       <Box
         mx={2}
         sx={{
@@ -14,9 +14,10 @@ export function DialogButtons(props) {
           display: "flex",
           justifyContent: "space-between"
         }}>
-        <Button mx={2} variant="contained">Upload</Button>
-        <Button onClick={() => props.setIsOpen(false)}>Cancel</Button>
+        <Button mx={2} variant="contained" onClick={()=>setIsUploading(true)}  >Upload</Button>
+        <Button onClick={() => setIsOpen(false)}>Cancel</Button>
       </Box>
 
     </DialogActions>);
 }
+
