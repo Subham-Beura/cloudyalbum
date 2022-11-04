@@ -2,26 +2,19 @@ import { useEffect, useState } from "react";
 import { getDocs, collection } from "firebase/firestore";
 import { firestore } from "../firebase/config";
 
-async function FetchingData(setLoaded,setDocs) {
-    let fetchResult = await getDocs(collection(firestore, 'posts'));
-    let refined = []
-    if (!fetchResult.empty) {
-        fetchResult.forEach(doc => {
-            refined.push({ id: doc.id, data: doc.data() })
-        })
-        setLoaded(true)
-    }
-    setDocs(refined)
+async function FetchingData(setDocs) {
+    let querySnapshot = await getDocs(collection(firestore, 'posts'));
+    let result =[];
+    querySnapshot.forEach((doc) => {
+        result.push({id:doc.id,data:doc.data()})
+    });
+    setDocs(result)
 }
 const useFetch = () => {
     const [docs, setDocs] = useState([])
-    const [loaded, setLoaded] = useState(false)
     useEffect(() => {
-        if(!loaded){
-            FetchingData(setLoaded,setDocs);
-        }
-    }, [loaded])
-
-    return { docs }
+        FetchingData(setDocs);
+    }, [])
+    return docs;
 }
 export default useFetch
